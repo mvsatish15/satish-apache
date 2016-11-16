@@ -1,4 +1,4 @@
-class apache:params {
+class apache::params {
   case $::osfamily {
     'Debian': {
       $package_name = 'httpd'
@@ -9,7 +9,7 @@ class apache:params {
       $service_name = 'httpd'
     }
     default: {
-      fail(${operatingsystem} not supporte)
+      fail("${operatingsystem} not supported")
     }
   }
   $webpage_text = 'puppet welcome'
